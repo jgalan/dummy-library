@@ -12,6 +12,8 @@ You may copy directly this directory, rename the classes and define the library 
 
 This example is provided to help you create your own event, metadata and processes integrated in REST. Please, carefully replace the existing examples, documentation, etc, by the specific documentation of your class.
 
+*IMPORTANT:* For creating new REST-for-Physics processes it is highly recommended to use the macro producing REST processes template files: `REST_MakeProcess.C`.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
