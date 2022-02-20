@@ -32,36 +32,15 @@ To avoid problems during the installation it is recommended that REST libraries 
 
 ### Installing
 
-After ROOT6 and REST haven been installed in the system, the compilation of this REST library should be straight forward. 
-Before starting the installation process make sure you are running the desired ROOT version and binary,
+Just place your library directory at the `source/libraries/` from the main REST source repositories, and enable the compilation of the library at the main REST compilation system:
 
 ```
-root-config --version
-which root
+cd rest-framework/build
+cmake -DRESTLIB_DUMMY=ON ..
 ```
 
-and the corresponding REST version and binary,
+The REST compilation system will identify the option `-DRESTLIB_DUMMY` with a directory named `source/libraries/dummy`, just replace `DUMMY` by the name of your library directory name.
 
-```
-rest-config --version
-which restRoot
-```
-
-The cmake compilation environment will recognize those and use them to link to your ROOT installation.
-
-Then, go to the root directory of your local REST repository, lets name it here `REST_SOURCE_PATH` and execute the following commands.
-
-```
-cd THIS_LIB_SRC_PATH
-mkdir build
-cd build
-cmake ../
-make -j4 install
-```
-
-After all the compilation and installation process ends, you will end up with a new installed REST library inside `REST_PATH/lib/`.
-
-Three other directories, data, macros and examples - common to any REST library - will be installed.
 
 ### Basic tests of this library
 
@@ -83,18 +62,9 @@ Loading library : libRestDetector.dylib
 
 ### A brief description of the examples provided
 
-### Compilation options
-
-TO define any library compilation options if necessary.
-
-Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available.
-
-* **INSTALL_PREFIX** (Default: REST_PATH) : Allows to define the destination of the final REST install directory.
-* **REST_DUMMY** (Default: ON) : A dummy option that might be defined in the CMakeLists.
-
 ## License
 
-This project is licensed under the GNU License - see the [LICENSE](https://lfna.unizar.es/rest-development/REST_v2/blob/master/LICENCE) file for details
+This project is licensed under the GNU License - see the [LICENSE](https://github.com/rest-for-physics/framework/blob/master/LICENCE) file for details.
 
 ## Acknowledgments
 
